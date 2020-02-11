@@ -12,4 +12,29 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+
+
+
+
+    mix.styles([
+
+        'resource/css/libs/blog-post.css',
+        'resource/css/libs/bootstrap.css',
+        'resource/css/libs/font-awesome.css',
+        'resource/css/libs/metisMenu.css',
+        'resource/css/libs/sb-admin-2.css',
+        'resource/css/libs/styles.css'
+    ],'.public/css/libs.css');
+
+    mix.scripts([
+
+        'resource/js/libs/bootstrap.js',
+        'resource/js/libs/jquery.js',
+        'resource/js/libs/metisMenu.js',
+        'resource/js/libs/sb-admin-2.js',
+        'resource/js/libs/scripts.js'
+
+    ],'.public/js/libs.js');
+
+
