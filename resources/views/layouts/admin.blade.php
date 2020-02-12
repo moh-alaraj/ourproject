@@ -12,27 +12,19 @@
     <title>Admin</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('panelAssets/css/libs/styles.css')}}" rel="stylesheet">
     <link href="{{asset('panelAssets/css/libs/blog-post.css')}}" rel="stylesheet">
-    <link href="{{asset('panelAssets/css/libs/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset('panelAssets/css/libs/metisMenu.css')}}" rel="stylesheet">
-    <link href="{{asset('panelAssets/css/libs/sb-admin-2.css')}}" rel="stylesheet">
     <link href="{{asset('panelAssets/css/libs/bootstrap.css')}}" rel="stylesheet">
 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="{{asset('panelAssets/css/libs/metisMenu.css')}}" rel="stylesheet">
+    <link href="{{asset('panelAssets/css/libs/sb-admin-2.css')}}" rel="stylesheet">
 
-    <script src="{{asset('panelAssets/js/libs/bootstrap.js')}}"></script>
-    <script src="{{asset('panelAssets/js/libs/jquery.js')}}"></script>
-    <script src="{{asset('panelAssets/js/libs/metisMenu.js')}}"></script>
-    <script src="{{asset('panelAssets/js/libs/sb-admin-2.js')}}"></script>
-    <script src="{{asset('panelAssets/js/libs/scripts.js')}}"></script>
+    <link href="{{asset('panelAssets/css/libs/styles.css')}}" rel="stylesheet">
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 
 
@@ -362,8 +354,17 @@
 
 @yield('footer')
 
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 
+<script src="{{asset('panelAssets/js/libs/jquery.js')}}"></script>
+<script src="{{asset('panelAssets/js/libs/bootstrap.js')}}"></script>
+<script src="{{asset('panelAssets/js/libs/sb-admin-2.js')}}"></script>
+<script src="{{asset('panelAssets/js/libs/metisMenu.js')}}"></script>
+<script src="{{asset('panelAssets/js/libs/scripts.js')}}"></script>
 
 
 </body>
