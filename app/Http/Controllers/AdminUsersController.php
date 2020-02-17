@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\AdditionalUserRequest;
 use App\Http\Requests\UserRequsts;
 use App\Photo;
 use App\Role;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -27,7 +29,9 @@ class AdminUsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
     {
+
 //        $roles = Role::lists('name','id')->toArray()->all();
           $roles =Role::get()->pluck('name','id')->all();
         return view('admin.users.create',compact('roles'));
@@ -44,6 +48,9 @@ class AdminUsersController extends Controller
      */
     public function store(UserRequsts $request)
     {
+
+        Session::flash('added_user','user has been added');
+
 
         if(trim($request->password) == ''){
 
@@ -109,9 +116,10 @@ class AdminUsersController extends Controller
      * @param  int  $id
      * @return array
      */
-    public function update(UserRequsts $request, $id)
+    public function update(AdditionalUserRequest $request, $id)
     {
 
+        Session::flash('updated_user','user has been udated');
 
         $user = User::findorfail($id);
 
@@ -153,6 +161,15 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+
+        $user = User::findorfail($id);
+        unlink(public_path(). $user->photo->file);
+        $user->delete();
+
+
+        Session::flash('deleted_user','user has been deleted');
+
+        return redirect('/admin/users');
     }
 }

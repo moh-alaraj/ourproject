@@ -8,7 +8,7 @@
     
     <div class="col-sm-3">
 
-        {{--<img src="" alt="">--}}
+          {{--<img src="" alt="">--}}
         {{--<img src="{{$user->photo->file??'-'}}" alt="" class="responsive circle">--}}
         <img src="{{$user->photo->file??'-'}}" alt="" class="img-responsive img-circle">
         
@@ -58,14 +58,26 @@
         </div>
     
         <div class="form-group">
-            {!! Form::submit('Edit user',['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Edit user',['class'=>'btn btn-primary col-sm-6']) !!}
         </div>
-    
-    
+
+
         {{ Form::close() }}
 
 
+        {!! Form::open(['method'=>'DELETE','action' => ['AdminUsersController@destroy',$user->id]]) !!}
+
+        <div class="form-group">
+            {!! Form::submit('Delete user',['class'=>'btn btn-danger col-sm-6']) !!}
+        </div>
+        {!!Form::close()!!}
+
+
+
+
     </div>
+
+
 
         <div class="row">
 
@@ -75,3 +87,6 @@
 
 
 @stop
+
+
+

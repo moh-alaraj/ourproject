@@ -3,6 +3,23 @@
 
 @section('content')
 
+        @if(Session::has('deleted_user'))
+
+            <p class="bg-danger col-lg-2">{{session('deleted_user')}}</p>
+
+        @endif
+        @if(Session::has('updated_user'))
+
+            <p class="bg-danger col-lg-2">{{session('updated_user')}}</p>
+
+        @endif
+        @if(Session::has('added_user'))
+
+            <p class="bg-danger col-lg-2">{{session('added_user')}}</p>
+
+        @endif
+        <br>
+
     <h1>Users</h1> <br>
 
 <table class="table table-striped">
